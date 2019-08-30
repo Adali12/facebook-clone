@@ -1,6 +1,5 @@
 <p id="notice"><%= notice %></p>
 <h1> FACEBOOK CLONE</h1>
-
 <table>
   <thead>
     <tr>
@@ -10,7 +9,6 @@
       <th colspan="3"></th>
     </tr>
   </thead>
-
   <tbody>
     <% @clones.each do |clone| %>
       <tr>
@@ -18,8 +16,6 @@
         <td><%= clone.Last_name %></td>
         <td><%= clone.email %></td>
         <td><%= link_to 'Show', clone %></td>
-        <td><%= link_to 'Edit', edit_clone_path(clone) %></td>
-        <td><%= link_to 'Delete', clone, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
