@@ -11,7 +11,8 @@
   <% if logged_in? %>
   <% if current_clone.id == post.clone.id %>
   <div class="card-footer row >
-  <%= link_to 'Edit', edit_post_path(post),class:"col-sm-3" %>
+  <%= link_to '', edit_post_path(post),class:"col-sm-3" %>
+  <%= link_to 'Edit', edit_post_path(post) ,class:"col-sm-3" %>
   <%= link_to 'Delete', post, method: :delete, data: { confirm: 'Are you sure?' },class:"col-sm-3"%>
   <%= link_to 'Show', post %>
   </div>
