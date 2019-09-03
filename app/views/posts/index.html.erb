@@ -1,25 +1,22 @@
-<hr>
-
-<%= link_to 'create New Post', new_post_path,class:"btn btn-primary",style:"margin-left:39rem;" %>
+<div class="container index-form">
+<%= link_to 'create New Post', new_post_path,class:"btn btn-primary"%>
 <br>
-<h1 style="text-align:center;">Posts</h1>
-<table>
-  <thead>
-    <tr>
-   
-  </thead>
+<h1>Posts</h1>
 
-  <tbody>
     <% @posts.each do |post| %>
-      <div class="card" style="width: 30rem;margin-left: 30rem;">
-  <div class="card-header"><%= post.clone.First_name %></div>
-  <div class="card-body"><%= post.content %><%- if post.image.present?  %><br><%= image_tag post.image.url() ,style:" height:100px; width:100px;" %><% end %></div> 
-  <div class="card-footer"><%= link_to 'Show', post, class:"col-sm-3" %><%= link_to 'Edit', edit_post_path(post),class:"col-sm-3" %><%= link_to 'Delete', post, method: :delete, data: { confirm: 'Are you sure?' },class:"col-sm-3"%></div>
-</div>
-    <% end %>
-  </tbody>
-</table>
+   <div class="card index-card" style="width: 30rem;">
+  <%= post.clone.First_name %>
+  <%= post.content %><%- if post.image.present?  %><br><%= image_tag post.image.url() ,style:" height:100px; width:100px;" %><% end %>
 
-<br>
-
-
+  <% if logged_in? %>
+  <% if current_clone.id == post.clone.id %>
+  <div class="card-footer row >
+  <%= link_to 'Edit', edit_post_path(post),class:"col-sm-3" %>
+  <%= link_to 'Delete', post, method: :delete, data: { confirm: 'Are you sure?' },class:"col-sm-3"%>
+  <%= link_to 'Show', post %>
+  </div>
+  <%end%>
+  <%end%>
+  </div>
+  <% end %>
+ 
