@@ -2,12 +2,10 @@
 <%= link_to 'create New Post', new_post_path,class:"btn btn-primary"%>
 <br>
 <h1>Posts</h1>
-
     <% @posts.each do |post| %>
    <div class="card index-card" style="width: 30rem;">
   <%= post.clone.First_name %>
   <%= post.content %><%- if post.image.present?  %><br><%= image_tag post.image.url() ,style:" height:100px; width:100px;" %><% end %>
-
   <% if logged_in? %>
   <% if current_clone.id == post.clone.id %>
   <div class="card-footer row >

@@ -1,29 +1,16 @@
 class ClonesController < ApplicationController
   before_action :set_clone, only: [:show, :edit, :update, :destroy]
-
-  # GET /clones
-  # GET /clones.json
   def index
     @clones = Clone.all
   end
-
-  # GET /clones/1
-  # GET /clones/1.json
   def show
     @clone = Clone.find(params[:id])
   end
-
-  # GET /clones/new
   def new
     @clone = Clone.new
   end
-
-  # GET /clones/1/edit
   def edit
   end
-
-  # POST /clones
-  # POST /clones.json
   def create
     @clone = Clone.new(clone_params)
 
@@ -38,9 +25,6 @@ class ClonesController < ApplicationController
       end
     end
   end
-
-  # PATCH/PUT /clones/1
-  # PATCH/PUT /clones/1.json
   def update
     respond_to do |format|
       if @clone.update(clone_params)
@@ -53,8 +37,6 @@ class ClonesController < ApplicationController
     end
   end
 
-  # DELETE /clones/1
-  # DELETE /clones/1.json
   def destroy
     @clone.destroy
     respond_to do |format|
@@ -64,12 +46,10 @@ class ClonesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
+   
     def set_clone
       @clone = Clone.find(params[:id])
     end
-
-    # Never trust parameters from the scary internet, only allow the white list through.
     def clone_params
       params.require(:clone).permit(:First_name, :Last_name, :email, :password, :password_confirmation)
     end
