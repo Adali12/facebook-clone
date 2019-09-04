@@ -17,10 +17,8 @@
   <div class="collapse navbar-collapse" style="margin-left:400px;">
     <ul class="navbar-nav">
       <li class="nav-item active"> 
-        
       </li>
       <li class="nav-item active">
-     
       </li>
     </ul>
   </div>  
@@ -28,7 +26,6 @@
   <% flash.each do |key, value| %>
     <%= content_tag(:div, value, class: "#{key}") %>
   <% end %>
-
   <% if logged_in? %>
     <%= link_to "Profile", clone_path(current_clone.id),class:"btn btn-primary" %>
     <%= link_to "Logout", session_path(current_clone.id), method: :delete,class:"btn btn-primary" %>

@@ -1,14 +1,11 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
- 
   def index
     @posts = Post.all
   end
-
   def show
     @post = Post.find(params[:id])
   end
-
   def new
     @post = Post.new
   end
@@ -16,7 +13,6 @@ class PostsController < ApplicationController
   end
   def create
     @post = Post.new(post_params)
-
     respond_to do |format|
       if @post.save
         format.html { redirect_to @post, notice: 'new Post was successfully created.' }
@@ -45,7 +41,6 @@ class PostsController < ApplicationController
       format.json { head :no_content }
     end
   end
-
   private
     def set_post
       @post = Post.find(params[:id])
@@ -53,4 +48,4 @@ class PostsController < ApplicationController
     def post_params
       params.require(:post).permit(:content, :image, :image_cache, :clone_id)
     end
-end
+  end

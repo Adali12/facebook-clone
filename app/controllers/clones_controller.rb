@@ -13,12 +13,10 @@ class ClonesController < ApplicationController
   end
   def create
     @clone = Clone.new(clone_params)
-
     respond_to do |format|
       if @clone.save
         format.html { redirect_to new_session_path, notice: 'facebook account was successfully created.' }
-        format.json { render :show, status: :created, location: @clone }
-        
+        format.json { render :show, status: :created, location: @clone } 
       else
         format.html { render :new }
         format.json { render json: @clone.errors, status: :unprocessable_entity }
@@ -36,7 +34,6 @@ class ClonesController < ApplicationController
       end
     end
   end
-
   def destroy
     @clone.destroy
     respond_to do |format|
@@ -44,9 +41,7 @@ class ClonesController < ApplicationController
       format.json { head :no_content }
     end
   end
-
   private
-   
     def set_clone
       @clone = Clone.find(params[:id])
     end
