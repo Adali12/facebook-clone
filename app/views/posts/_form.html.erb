@@ -17,7 +17,7 @@
 
   <div class="form-group">
     <%= form.label :image %>
-    <%= image_tag(@post.image.url) if @post.image && @post.image.url %>
+    <%= image_tag(@post.image.url,size:"100x80",class:"rounded" ) if @post.image && @post.image.url %>
     <%= form.file_field  :image %>
     <%= form.hidden_field :image_cache %>
   </div>
