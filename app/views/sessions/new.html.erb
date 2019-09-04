@@ -8,6 +8,7 @@
   <div class="form-group">
     <%= f.password_field :password,class:"form-control",id:"formGroupExampleInput2", placeholder:"Enter Your Password",style:"width:400px;" %><br>
     <%= f.submit "Log in",class:"btn btn-primary" %>
+    <p>Don't have an account?<br> <%= link_to "sign up", new_clone_path, class:"nav-link", style:"color:white;",class:"btn btn-primary",style:"margin-left:5px;" %></p>
   </div>
 <% end %>
 </center>
