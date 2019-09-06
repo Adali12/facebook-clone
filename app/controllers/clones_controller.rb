@@ -41,11 +41,11 @@ class ClonesController < ApplicationController
       format.json { head :no_content }
     end
   end
-  private
-    def set_clone
-      @clone = Clone.find(params[:id])
-    end
-    def clone_params
-      params.require(:clone).permit(:First_name, :Last_name, :email, :password, :password_confirmation)
-    end
+private
+def set_clone
+@clone = Clone.find(params[:id])
+end
+def clone_params
+params.require(:clone).permit(:First_name, :Last_name, :email, :password, :password_confirmation)
+end
 end

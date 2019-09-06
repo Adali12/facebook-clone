@@ -42,10 +42,10 @@ class PostsController < ApplicationController
     end
   end
   private
-    def set_post
-      @post = Post.find(params[:id])
-    end
-    def post_params
-      params.require(:post).permit(:content, :image, :image_cache, :clone_id)
-    end
+  def set_post
+  @post = Post.find(params[:id])
+  end
+  def post_params
+  params.require(:post).permit(:content, :image, :image_cache, :clone_id)
+  end
   end
