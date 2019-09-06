@@ -10,7 +10,7 @@
   <%= @post.content %>
 </p><p>
   <%- if @post.image.present?  %>
-  <td> <%= image_tag @post.image.url(),size:"100x80",class:"rounded"  %></td>
+  <td> <%= image_tag @post.image.url(),size:"250x350",class:"rounded"  %></td>
   <% end %>
 </p></div> 
   <div class="card-footer"><%= link_to 'Edit', edit_post_path(@post),class:"btn btn-primary" %> |
